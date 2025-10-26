@@ -3,7 +3,19 @@
 
 using namespace std;
 
+void bubbleSortAsc(int arr[], int n) {
+	int temp;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
 
+			if (arr[j] > arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
 
 int main() {
 	setlocale(LC_ALL, "rus");
@@ -26,7 +38,7 @@ int main() {
 
 	for (int i = 0; i < (size(array) - 1); i++) {
 		if (array[i] == array[i + 1]) {
-			sort(array, array + size(array));
+			bubbleSortAsc(array, size(array));
 			break;
 		}
 	}
@@ -48,7 +60,6 @@ int main() {
 	int maxSum = 0;
 	int maxSumIndex;
 	int sum;
-	int tmparr[4];
 	for (int i = 0; i < 3; i++) {
 		sum = 0;
 
